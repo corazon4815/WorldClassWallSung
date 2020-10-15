@@ -920,21 +920,24 @@ insert into CLASS_CANCEL_TB
 set SUB_CD = 1011,
    CAN_DT = "2020-09-10",
     SUP_DT = "2020-10-10",
-    CAN_IU = "몸살 감기로 인한"
+    CAN_IU = "몸살 감기로 인한",
+    CAN_STATE = "대기"
 ;
 
 insert into CLASS_CANCEL_TB
 set SUB_CD = 1009,
    CAN_DT = "2020-09-17",
     SUP_DT = "2020-10-11",
-    CAN_IU = "건강 상태의 문제로 인한"
+    CAN_IU = "건강 상태의 문제로 인한",
+    CAN_STATE = "대기"
 ;
 
 insert into CLASS_CANCEL_TB
 set SUB_CD = 1002,
    CAN_DT = "2020-08-21",
     SUP_DT = "2020-10-15",
-    CAN_IU = "학사 일정으로 인한"
+    CAN_IU = "학사 일정으로 인한",
+    CAN_STATE = "대기"
 ;
 
 INSERT INTO LICENSE_TB(LI_NM,LI_FILE,LI_DATE,LI_PATH)
