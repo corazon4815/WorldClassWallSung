@@ -3,7 +3,7 @@
 <html>
 <head>
 <title>월성 대학교 포털  로그인</title>
-</head>
+</head><!-- a -->
 	<body>
 	<jsp:include page="loginstu.do"></jsp:include>	
 	</body>
