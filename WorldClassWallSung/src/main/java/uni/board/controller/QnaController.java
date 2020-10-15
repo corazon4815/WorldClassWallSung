@@ -126,10 +126,10 @@ public class QnaController {
 	}
 	//¥Ò±€ ªË¡¶
 	@RequestMapping("deleteReply.do")
-	public String deleteReplyPro(@RequestParam("rno")int rno,RedirectAttributes redirect) {
+	public String deleteReplyPro(@RequestParam("rno")int rno,RedirectAttributes redirect, QnaDto dto) {
 		reservice.deleteReply(rno);
 		System.out.println(rno);
-		QnaDto dto = new QnaDto();
+		System.out.println(dto.getNo());
 		redirect.addAttribute("no",dto.getNo());
 		return "redirect:selectQnaForm.do";
 	}

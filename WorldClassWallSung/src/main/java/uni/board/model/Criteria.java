@@ -1,10 +1,10 @@
 package uni.board.model;
 
 public class Criteria {
-	int page; // 페이지 번호
-	int perPageNum; // 페이지당 게시글 갯수
-	int rowStart; // 페이지 한 행의 첫번째 게시물 rowNum
-	int rowEnd; // 페이지 한 행의 마지막 게시물 rowNum
+	int page;
+	int perPageNum;
+	int rowStart;
+	int rowEnd;
 	
 	public Criteria() {
 		this.page = 1;
@@ -28,7 +28,6 @@ public class Criteria {
 		return page;
 	}
 	public int getPageStart() {
-		// 현재페이지 * 현재 페이지 당 게시글 수를 리턴 
 		return (this.page - 1) * perPageNum;
 	}
 	public int getPerPageNum() {
@@ -42,4 +41,10 @@ public class Criteria {
 		rowEnd = rowStart + perPageNum - 1;
 		return rowEnd;
 	}
+	@Override
+	public String toString() {
+		return "Criteria [page=" + page + ", perPageNum=" + perPageNum + ", rowStart=" + rowStart + ", rowEnd=" + rowEnd
+				+ "]";
+	}
+	
 }
