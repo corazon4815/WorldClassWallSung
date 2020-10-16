@@ -105,7 +105,7 @@ function CountChecked(checkbox) {
 		totalChecked -= 1; // totalChecked 감소
 	if (totalChecked > maxChecked) { 
 		alert ("최대 3개 까지만 가능합니다."); 
-		field.checked = false;
+		checkbox.checked = false;
 		totalChecked -= 1;
     }    
 }

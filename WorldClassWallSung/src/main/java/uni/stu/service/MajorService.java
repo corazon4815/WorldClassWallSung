@@ -17,7 +17,7 @@ public class MajorService {
 	public void setDao(MajorDao dao) {
 		this.dao = dao;
 	}
-	public List<Map<String,Object>> cultureList(String isu){		
+	public List<MajorDto> cultureList(String isu){		
 		return dao.cultureList(isu);
 	}
 	public MajorDto selectDept() {

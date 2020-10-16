@@ -41,15 +41,11 @@ fieldset {
 </script>
 </head>
 <body>
-	<div id="openSub" style="padding: 5px; margin-left: 500px;">
+	<div id="openSub" style="padding: 5px; margin-left: 300px;">
 		<form>
 			<fieldset style="border: 1px solid;">
 				<c:forEach items="${list}" var="list">
-
-					<legend style="font-weight: bold;">강의명 &nbsp;:&nbsp;
-						${list.sub_nm}</legend>
-					<br>
-		
+					<br>		
 		이수구분 <input type="text" id="isu" value="${list.isu}">&nbsp;&nbsp;		
 		강의코드 <input type="text" id="sub_cd" value="${list.sub_cd}">
 					<br>
@@ -68,7 +64,7 @@ fieldset {
 					<br>
 
 		강의계획서	<input type="button" id="sub_path"
-						onclick="changeContent('downApply.do?sub_path=${list.sub_path}')"
+						onclick="location.href='downApply.do?sub_path=${list.sub_path}'"
 						value="${list.sub_nm}_강의계획서">
 					<br>
 				</c:forEach>

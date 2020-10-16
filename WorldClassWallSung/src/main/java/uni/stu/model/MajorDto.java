@@ -22,7 +22,79 @@ public class MajorDto {
 	String sem;
 	String sub_state;
 	int years;
+	String lec; //강의시간
 	
+	public void setLec(	int lec_1,int lec_2,int lec_3) {
+		
+		String lec1="",lec2="",lec3 ="";
+		
+		if(lec_1/10 ==0) {
+			lec1="월"+lec_1%10;
+		}
+		if(lec_1/10 ==1) {
+			lec1="화"+lec_1%10;
+		}
+		if(lec_1/10 ==2) {
+			lec1="수"+lec_1%10;
+		}
+		if(lec_1/10 ==3) {
+			lec1="목"+lec_1%10;
+		}
+		if(lec_1/10 ==4) {
+			lec1="금"+lec_1%10;
+		}
+		
+		if(lec_2/10 ==0) {
+			lec2="월"+lec_2%10;
+		}
+		if(lec_2/10 ==1) {
+			lec2="화"+lec_2%10;
+		}
+		if(lec_2/10 ==2) {
+			lec2="수"+lec_2%10;
+		}
+		if(lec_2/10 ==3) {
+			lec2="목"+lec_2%10;
+		}
+		if(lec_2/10 ==4) {
+			lec2="금"+lec_2%10;
+		}
+		
+		if(lec_3/10 ==0) {
+			lec3="월"+lec_3%10;
+		}
+		if(lec_3/10 ==1) {
+			lec3="화"+lec_3%10;
+		}
+		if(lec_3/10 ==2) {
+			lec3="수"+lec_3%10;
+		}
+		if(lec_3/10 ==3) {
+			lec3="목"+lec_3%10;
+		}
+		if(lec_3/10 ==4) {
+			lec3="금"+lec_3%10;
+		}	
+		
+		this.lec = lec1+","+lec2+","+lec3;		
+	}
+	
+	public int getStu_no() {
+		return stu_no;
+	}
+
+	public void setStu_no(int stu_no) {
+		this.stu_no = stu_no;
+	}
+
+	public String getLec() {
+		return lec;
+	}
+
+	public void setLec(String lec) {
+		this.lec = lec;
+	}
+
 	public String getDept_cd() {
 		return dept_cd;
 	}

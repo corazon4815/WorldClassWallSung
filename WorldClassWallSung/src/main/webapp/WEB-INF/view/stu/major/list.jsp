@@ -68,12 +68,12 @@
 								<td>${list.isu }</td>
 								<td>${list.credit }</td>
 								<td>${list.prof_nm }</td>
-								<td>${list.lec_1 },${list.lec_2 },${list.lec_3 }교시</td>
+								<td>${list.lec }</td>
 								<td>${list.max_mem}</td>
 								<td>${list.attend_mem }</td>
 								<td><input type="button" class="btn-dark"
-									onclick="changeContent('downApply.do?sub_path=${list.sub_path}')"
-									value="${list.sub_file}"></td>
+									onclick="location.href='downApply.do?sub_path=${list.sub_path}'"
+									value="다운로드"></td>
 								<td><input type="button" value="수강 취소" class="btn-dark"
 									onclick='fn_delete(${list.sub_cd})'></td>
 							</tr>
@@ -128,7 +128,7 @@ function selectList(){
 						var credit = "<td>"+args[i].credit+"</td>";
 						var dept_nm = "<td>"+args[i].dept_nm+"</td>";
 						var prof_nm = "<td>"+args[i].prof_nm+"</td>";
-						var lec = "<td>"+args[i].lec_1+","+args[i].lec_2+","+args[i].lec_3+"교시</td>";
+						var lec = "<td>"+args[i].lec+"</td>";
 						var max_mem = "<td>"+args[i].max_mem+"</td>";
 						var attend_mem = "<td>"+args[i].attend_mem+"</td>"
 						

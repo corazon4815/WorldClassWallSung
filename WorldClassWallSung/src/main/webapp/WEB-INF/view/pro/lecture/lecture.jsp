@@ -26,7 +26,7 @@
 	<div class="filewrap">
 	강의계획서<input type="text" id="fileName"  name="fileName" readonly="readonly">
 	<label for="upFile" class="file_upload_btn">파일 업로드</label>
-	<input type="file" id="upFile" name="upFile">
+	<input type="file" id="upFile" name="upFile" style="display: none">
 	</div>
 	강의명 <input type="text" name="sub_nm" id="sub_nm">
 	<input type="hidden" name="dept_cd" id="dept_cd" value="${login.dept_cd}">

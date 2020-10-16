@@ -55,7 +55,7 @@ public class MajorController implements ApplicationContextAware {
 	@RequestMapping(value="culture.do", produces = "text/plain;charset=UTF-8")
 	@ResponseBody
 	public String empList(String isu) throws Exception{
-		List<Map<String,Object>> list = service.cultureList(isu);		
+		List<MajorDto> list = service.cultureList(isu);		
 		Gson json = new Gson();
 		return json.toJson(list);
 	}

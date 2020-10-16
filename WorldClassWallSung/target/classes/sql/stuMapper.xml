@@ -10,13 +10,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	select ISU, SUB_NM, a.SUB_CD, CREDIT, YEARS, SEM from SUBJECT_TB a join attend_tb b where a.SUB_CD = b.SUB_CD and STU_NO= #{stu_no} order by years, sem;
 	</select>
 	<select id = "sumsub" resultType = "int" parameterType="int">
-		 select sum(credit) from SUBJECT_TB a join attend_tb b where a.SUB_CD = b.SUB_CD and STU_NO= #{stu_no} and isu like '전공%'
+		 select ifnull(sum(credit), 0) from SUBJECT_TB a join attend_tb b where a.SUB_CD = b.SUB_CD and STU_NO= #{stu_no} and isu like '전공%'
 	</select>
 	<select id = "sumsub1" resultType = "int" parameterType="int">
-		select sum(credit) from SUBJECT_TB a join attend_tb b where a.SUB_CD = b.SUB_CD and STU_NO= #{stu_no} and isu like '교양%'
+		select ifnull(sum(credit), 0) from SUBJECT_TB a join attend_tb b where a.SUB_CD = b.SUB_CD and STU_NO= #{stu_no} and isu like '교양%'
 	</select>
 	<select id = "sumsub2" resultType = "int" parameterType="int">
-		select sum(credit) from SUBJECT_TB a join attend_tb b where a.SUB_CD = b.SUB_CD and STU_NO= #{stu_no}
+		select ifnull(sum(credit), 0) from SUBJECT_TB a join attend_tb b where a.SUB_CD = b.SUB_CD and STU_NO= #{stu_no}
 	</select>
 		
 	<!-- 자격증 -->
@@ -43,7 +43,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!--수강 가능한 강의 출력-->
 	<select resultType="uni.stu.model.MajorDto" id="listCulture" parameterType="string">
-		select * from subject_tb natural join professor_tb natural join dept_tb where isu like CONCAT('%',#{isu},'%') 
+		select * from subject_tb natural join professor_tb natural join dept_tb where isu like CONCAT('%',#{isu},'%') and sub_state = "승인" 
 	</select>
 	<select resultType="string" id="listDept">
 		select dept_nm from dept_tb

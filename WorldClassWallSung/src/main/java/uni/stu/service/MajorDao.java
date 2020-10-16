@@ -2,7 +2,7 @@ package uni.stu.service;
 
 import org.mybatis.spring.support.SqlSessionDaoSupport;
 
-import uni.stu.model.ApplyDownDto;
+
 import uni.stu.model.ApplyDto;
 import uni.stu.model.MajorDto;
 
@@ -11,8 +11,12 @@ import java.util.*;
 
 public class MajorDao extends SqlSessionDaoSupport{
 	
-	public List<Map<String,Object>> cultureList(String isu){
-		return getSqlSession().selectList("student.listCulture", isu);
+	public List<MajorDto> cultureList(String isu){
+		List<MajorDto> li = getSqlSession().selectList("student.listCulture", isu);
+		for(MajorDto i : li) {
+			i.setLec(i.getLec_1(), i.getLec_2(), i.getLec_3());
+		}
+		return li;
 	}
 	public MajorDto selectDept() {
 		return getSqlSession().selectOne("student.listDept");
@@ -21,7 +25,11 @@ public class MajorDao extends SqlSessionDaoSupport{
 		return getSqlSession().insert("student.apply", dto);
 	}
 	public List<ApplyDto> applyList(int stu_no){
-		return getSqlSession().selectList("student.selectApply",stu_no);
+		List<ApplyDto> li = getSqlSession().selectList("student.selectApply", stu_no);
+		for(ApplyDto i : li) {
+			i.setLec(i.getLec_1(), i.getLec_2(), i.getLec_3());
+		}
+		return li;
 	}
 	public int delete(ApplyDto dto) {
 		return getSqlSession().delete("student.deleteApply", dto);
