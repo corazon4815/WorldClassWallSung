@@ -256,10 +256,10 @@ CREATE TABLE QNA_TB
     `NO`        INT            NOT NULL    AUTO_INCREMENT COMMENT '순번', 
     `TITLE`     VARCHAR(45)    NULL        COMMENT '제목', 
     `MEM_NO`    INT            NULL        COMMENT '멤버번호', 
-    `HIT`       INT 		   NULL        default 0  COMMENT '조회수', 
-    `BOARD_DT`  timestamp 	   not null    default now()  COMMENT '등록일자', 
+    `HIT`       INT 	       NULL        default 0  COMMENT '조회수', 
+    `BOARD_DT`  timestamp      not null    default now()  COMMENT '등록일자', 
     `CONTENT`   TEXT           NULL        COMMENT '내용',
-    `WRITER`    VARCHAR(20)    NULL        COMMENT '작성자', 
+    `WRITER`    VARCHAR(20)    NULL        COMMENT '작성자',
     PRIMARY KEY (NO)
 );
 create table qna_reply (
@@ -272,3 +272,6 @@ create table qna_reply (
     FOREIGN KEY (NO) REFERENCES qna_tb (NO) ON DELETE CASCADE
 );
 alter table subject_board_tb add dept_nm varchar(45);
+alter table qna_tb add stu_no int;
+alter table qna_tb add prof_cd int;
+alter table subject_board_tb add prof_cd int;
